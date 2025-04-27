@@ -5,8 +5,12 @@ import { OBJLoader } from 'three/examples/jsm/loaders/OBJLoader'
 import { useLoader } from '@react-three/fiber'
 import { Object3D } from "three";
 
+interface GlassesModelProps {
+  scale?: number;
+  position?: { x: number; y: number };
+}
 
-export default function GlassesModel() {
+export default function GlassesModel({ scale = 1, position = { x: 0, y: 0 } }: GlassesModelProps) {
     const ref = useRef<Object3D>(null);
     const obj = useLoader(OBJLoader, '/model.obj');
     const mouse = useRef({ x: 0, y: 0 });
@@ -30,6 +34,11 @@ export default function GlassesModel() {
     });
 
     return (
-        <primitive ref={ref} object={obj} position={[.045, -.17, 0]} />
+        <primitive 
+            ref={ref} 
+            object={obj} 
+            position={[.045 + position.x, -.17 + position.y, 0]} 
+            scale={scale}
+        />
     );
 }
