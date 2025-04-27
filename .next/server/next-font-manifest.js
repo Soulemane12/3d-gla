@@ -1,0 +1,1 @@
+self.__NEXT_FONT_MANIFEST="{\"pages\":{},\"app\":{\"/Users/soulemanesow/Downloads/Code/3d Glasses/app/layout\":[\"static/media/4de1fea1a954a5b6-s.p.woff2\"]},\"appUsingSizeAdjust\":true,\"pagesUsingSizeAdjust\":false}"
